@@ -30,6 +30,7 @@ is_plugin() {
 }
 # Add all defined plugins to fpath. This must be done
 # before running compinit.
+autoload -U compinit
 for plugin ($plugins); do
   if is_plugin $ZSH_CUSTOM $plugin; then
     fpath=($ZSH_CUSTOM/plugins/$plugin $fpath)
